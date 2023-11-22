@@ -47,7 +47,7 @@ public class StartServlet extends HttpServlet {
         List<Question> questionsAndAns = q.getRandom();
        
        
-        session.setAttribute("answers", answers);
+        session.setAttribute("questionsAndAns", questionsAndAns);
         session.setAttribute("ques_counter", ques_counter);
         session.setAttribute("stud_name", stud_name);
         session.setAttribute("outcome", outcome);
