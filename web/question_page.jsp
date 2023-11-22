@@ -34,24 +34,28 @@
         %>
        <div class="app">
             <h1>Question 1</h1>
+            
             <div class="quiz">
-                <h2 id="question">Question goes here</h2>
-                <div id="answer-button"></div>                    
+                
+                <h2 id="question"><%=question%></h2>
+                
+                <div id="answer-button"></div>  
+                
                     <form action="xxxx">
 
                         <table>
 
                             <tr>
-                                <td><button class="btn">A. Answer 1</button></td>
+                                <td><button class="btn">A. <%=option1%></button></td>
                             </tr>
                             <tr>
-                                <td><button class="btn">B. Answer 2</button></td>
+                                <td><button class="btn">B.<%=option2%></button></td>
                             </tr>
                             <tr>
-                                <td><button class="btn">C. Answer 3</button></td>
+                                <td><button class="btn">C. <%=option3%></button></td>
                             </tr>
                             <tr>
-                                <td><button class="btn">D. Answer 4</button></td>
+                                <td><button class="btn">D. <%=option4%></button></td>
                             </tr>
                             <tr>
 
