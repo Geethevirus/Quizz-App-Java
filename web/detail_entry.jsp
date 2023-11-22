@@ -10,20 +10,31 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="nampage.css">
     </head>
     <body>
-        <h1>Please Enter the following.</h1>
-        <form action="StartServlet">
-            <table>
-                <tr>
-                    <td>Enter your name:</td>
-                    <td><input type="text" name="stud_name"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="SUBMIT"/></td>
-                </tr>
-            </table>
-        </form>
+     
+        <div class="container">
+            <h1>Please Enter the following.</h1>
+            <div class="welmsg">
+
+
+                <form action="StartServlet">
+
+                    <table>
+                        <tr>
+                            <td><h3>Enter your name:</h3></td>
+                            <td><input class="nameinp" type="text" name="user_name"/></td>
+                        </tr>
+
+                    </table>
+                    <td><button class="subbtn">submit</button></td>
+                </form>
+                
+
+            </div>
+
+        </div>
+        
     </body>
 </html>
