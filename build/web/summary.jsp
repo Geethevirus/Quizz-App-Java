@@ -23,7 +23,8 @@
             List<String> outcomes = (List<String>)session.getAttribute("outcome");
             List<String> stud_answrs = (List<String>)session.getAttribute("stud_answrs");
             Integer num_correct = (Integer)session.getAttribute("num_correct");
-            
+            String exam_outcome = (String)request.getAttribute("exam_outcome");
+            Double percentage = (Double)request.getAttribute("perc");
             Integer counter =1;
             
 
@@ -33,7 +34,9 @@
             <h1>Summary </h1>
             <div class="sum_content">
                 <h2 >STUDENT NAME: <%=stud_name%></h2>
-                <h2 class="hh">TEST OUTCOME: <%=num_correct%> / 5 </h2>
+                <h2 class="">TEST SCORE <%=num_correct%> / 5 </h2>
+                <h2 class="">EXAM OUTCOME: <%=percentage%>% </h2>
+                <h2 class="hh">EXAM STATUS: <%=exam_outcome%></h2>
                 
                 <table>
                     <% for(int i= 0;  i < 5 ; i++) {

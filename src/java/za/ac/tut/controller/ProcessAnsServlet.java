@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.model.Question;
+import za.ac.tut.model.QuestionBank;
 
 /**
  *
@@ -31,7 +32,7 @@ public class ProcessAnsServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         String urs_answer = request.getParameter("user_answer");
-        
+        QuestionBank q = new QuestionBank();
         int ques_counter = (Integer)session.getAttribute("ques_counter");
         int num_correct = (Integer)session.getAttribute("num_correct");
         
@@ -41,6 +42,8 @@ public class ProcessAnsServlet extends HttpServlet {
         List<String> stud_answrs = (List<String>)session.getAttribute("stud_answrs");
         String correctAns = "";
         String url =  "summary.jsp";
+        String exam_outcome= "";
+        double perc = 0;
         
         List<String> outcomes = (List<String>)session.getAttribute("outcome");
         
@@ -71,7 +74,21 @@ public class ProcessAnsServlet extends HttpServlet {
         if (ques_counter==5) {
             
             url =  "summary.jsp";
+            perc = q.getPercentage(num_correct);
             
+            if (perc > 50 && perc < 74) {
+                
+                exam_outcome = "PASS";
+                
+            }else if(perc >= 74 && perc<=100){
+                
+                exam_outcome = "PASS WITH DISTINCTION";
+                
+            }else{
+                
+                exam_outcome = "FAIL";
+            
+            }
         }
         
 
@@ -80,6 +97,8 @@ public class ProcessAnsServlet extends HttpServlet {
         
         session.setAttribute("ques_counter", ques_counter);
         session.setAttribute("outcome", outcomes);
+        request.setAttribute("perc", perc);
+        request.setAttribute("exam_outcome", exam_outcome);
         session.setAttribute("num_correct",num_correct);
         session.setAttribute("stud_answrs",stud_answrs);
            

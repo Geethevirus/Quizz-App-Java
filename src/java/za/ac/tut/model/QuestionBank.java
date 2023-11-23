@@ -100,6 +100,15 @@ public class QuestionBank {
         return five_questions;
         
     }
+    public double getPercentage(int num_correct)
+    {
+        double percentage = 0;
+        
+        percentage = (Double.valueOf(num_correct)/5.0)*100 ;
+        
+        return percentage;
+    }
+    
     
     public List<String> getAnswers(List<String> questionsAndAns)
     {
