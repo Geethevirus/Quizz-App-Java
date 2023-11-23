@@ -33,7 +33,7 @@
             
         %>
        <div class="app">
-            <h1>Question 1</h1>
+            <h1>Question <%=ques_counter%></h1>
             
             <div class="quiz">
                 
@@ -41,7 +41,7 @@
                 
                 <div id="answer-button"></div>  
                 
-                    <form action="xxxx">
+                <form action="ProcessAnsServlet" method="POST">
 
                         <table>
 
