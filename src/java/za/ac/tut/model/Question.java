@@ -27,6 +27,9 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
+    public Question() {
+    }
+    
     public String getQuestion() {
         return question;
     }

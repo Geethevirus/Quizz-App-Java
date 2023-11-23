@@ -28,8 +28,8 @@
             
             
             
-            ques_counter++;
-           
+            
+           ques_counter++;
             
         %>
        <div class="app">

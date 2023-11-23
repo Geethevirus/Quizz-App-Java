@@ -29,29 +29,27 @@ public class StartServlet extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = request.getSession(true);
-        String stud_name = request.getParameter("stud_name");
+        String stud_name = request.getParameter("user_name");
+        
         
         
         QuestionBank q = new QuestionBank();
         
-        List<String> answers = new ArrayList<>();
+        
         List<String> outcome = new ArrayList<>();
         List<String> stud_answrs = new ArrayList<>();
-        
+        List<Question> questionsAndAns = q.getRandom();
         
         int ques_counter = 0;
         int num_correct = 0;
         int num_ques = 5;
         
-        
-        List<Question> questionsAndAns = q.getRandom();
-       
-       
         session.setAttribute("questionsAndAns", questionsAndAns);
         session.setAttribute("ques_counter", ques_counter);
         session.setAttribute("stud_name", stud_name);
         session.setAttribute("outcome", outcome);
         session.setAttribute("num_ques", num_ques);
+        session.setAttribute("num_correct", num_correct);
         session.setAttribute("stud_answrs", stud_answrs);
         
         

@@ -31,19 +31,28 @@ public class ProcessAnsServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         String urs_answer = request.getParameter("user_answer");
-        int ques_counter = (Integer)session.getAttribute("ques_counter"); 
+        
+        int ques_counter = (Integer)session.getAttribute("ques_counter");
+        int num_correct = (Integer)session.getAttribute("num_correct");
+        
+        
         String result = ""; 
         List<Question> listQ = (List<Question>)session.getAttribute("questionsAndAns");
+        List<String> stud_answrs = (List<String>)session.getAttribute("stud_answrs");
+        String correctAns = "";
         String url =  "summary.jsp";
-        String correctAns = listQ.get(ques_counter).getCorrectAnswer();
+        
         List<String> outcomes = (List<String>)session.getAttribute("outcome");
+        
         
         if (ques_counter < 5) {
             
-            
+            correctAns = listQ.get(ques_counter).getCorrectAnswer();
+             
             if (urs_answer.equalsIgnoreCase(correctAns)) {
                 
                 result = "Correct";
+                num_correct++;
                 
             }else{
             
@@ -51,26 +60,32 @@ public class ProcessAnsServlet extends HttpServlet {
                 
             }
             
-            ques_counter++;
+            
             url = "question_page.jsp";         
             outcomes.add(result);
+            stud_answrs.add(urs_answer);
             
+        }
+        ques_counter++;
+        
+        if (ques_counter==5) {
+            
+            url =  "summary.jsp";
             
         }
         
-        
-        
-               
+
+                 
         
         
         session.setAttribute("ques_counter", ques_counter);
         session.setAttribute("outcome", outcomes);
+        session.setAttribute("num_correct",num_correct);
+        session.setAttribute("stud_answrs",stud_answrs);
            
         RequestDispatcher disp = request.getRequestDispatcher(url);
         disp.forward(request, response);
         
     }
-
-    
 
 }

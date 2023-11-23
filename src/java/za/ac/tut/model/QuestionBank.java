@@ -29,7 +29,7 @@ public class QuestionBank {
         questions.add(new Question("1 - 1 = ?" ,"1","11","2","0","0"));
         questions.add(new Question("1 % 1 = ?" ,"1","11","2","0","0"));
         questions.add(new Question("(1 + 1) *2 = ?" ,"1","2","4","6","4"));
-        questions.add(new Question("(1 + 1) / 2 = ? = ?" ,"1","2","4","6","1"));
+        questions.add(new Question("(1 + 1) / 2  = ?" ,"1","2","4","6","1"));
       
         
         
