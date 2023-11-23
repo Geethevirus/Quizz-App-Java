@@ -31,67 +31,7 @@ public class QuestionBank {
         questions.add(new Question("(1 + 1) *2 = ?" ,"1","2","4","6","4"));
         questions.add(new Question("(1 + 1) / 2  = ?" ,"1","2","4","6","1"));
       
-        
-        
-        
-        
-//        List<String> questions = new ArrayList<>();
-//        
-//        questions.add("1 + 1 = ? <br> \n\n"
-//                + "A.1\n <br>"
-//                + "B.11\n <br>"
-//                + "C.2\n <br>"
-//                + "D.0\n"
-//                +"C");
-// 
-//        
-//          questions.add("1 * 1 = ? <br>\n\n" +
-//                "A. 1\n <br>" +
-//                "B. 11\n <br>" +
-//                "C. 2\n <br>" +
-//                "D. 0\n"
-//                  + "A");
-//         
-//        
-//        questions.add("1 / 1 = ? <br>\n\n" +
-//                "A. 1\n <br>" +
-//                "B. 11\n <br>" +
-//                "C. 2\n <br>" +
-//                "D. 0\n"
-//                + "A");
-//      
-//        
-//        questions.add("1 - 1 = ?<br> \n\n" +
-//                "A. 1\n <br>" +
-//                "B. 11\n <br>" +
-//                "C. 2\n <br>" +
-//                "D. 0"
-//                + "D");
-//      
-//        
-//        questions.add("1 % 1 = ? <br> \n\n" +
-//                "A. 1\n <br>" +
-//                "B. 11\n <br>" +
-//                "C. 2\n <br>" +
-//                "D. 0\n"
-//                + "D");
-//        
-//       
-//        
-//        questions.add("(1 + 1) *2 = ? <br> \n\n" +
-//                "A. 1\n <br>" +
-//                "B. 2\n <br>" +
-//                "C. 4\n <br>" +
-//                "D. 6\n"
-//                + "C");
-//        
-//        
-//        questions.add("(1 + 1) / 2 = ? <br>\n\n" +
-//                "A. 1\n <br>" +
-//                "B. 2\n <br>" +
-//                "C. 4\n <br>" +
-//                "D. 6\n"
-//                + "A");
+
         
         Collections.shuffle(questions);
         
